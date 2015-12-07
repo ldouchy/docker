@@ -1,7 +1,7 @@
-# BXA Sherpa container 
+# BXA over CIAO
 # https://johannesbuchner.github.io/BXA
 
-FROM lovelace:5000/ciao:latest
+FROM ldouchy/ciao:latest
 
 MAINTAINER ldouchy
 
