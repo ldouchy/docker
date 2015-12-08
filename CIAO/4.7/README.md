@@ -19,6 +19,12 @@ On linux:
 
 /!\ you need to authorize the container to access your local X server. /!\
 
+# Customise this image for your needs
+
+In order to have CIAO working you need prior running your code to source the CIAO environement. 
+The current install is made under root, LOGNAME variable is needed in order  to have a working CIAO. This will be fixed in the future by having a CIAO image without root installation:
+`source /opt/ciao-4.7/bin/ciao.bash && export LOGNAME=root`
+
 # CIAO links
 
 [CIAO main page](http://cxc.harvard.edu/ciao/index.html)
