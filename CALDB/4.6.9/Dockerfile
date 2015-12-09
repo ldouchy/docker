@@ -8,7 +8,7 @@ MAINTAINER ldouchy
 # Prerequisite packages installation & clean
 RUN apt-get update \
  && apt-get install -y \
-	curl
+	curl \
  && rm -rf /var/lib/apt/lists/*
 
 workdir /opt/CALDB
