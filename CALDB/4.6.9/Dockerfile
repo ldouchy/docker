@@ -12,7 +12,7 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 # caldbmgr:caldb user creation
-RUN mkdir /opt/CALDB && groupadd caldb && useradd -r -g caldb caldbmgr && chown caldbmgr:caldb /optCALDB
+RUN mkdir /opt/CALDB && groupadd caldb && useradd -r -g caldb caldbmgr && chown caldbmgr:caldb /opt/CALDB
 
 # switch to user caldbmgr
 USER caldbmgr
