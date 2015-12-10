@@ -21,5 +21,6 @@ RUN wget ftp://cda.harvard.edu/pub/arcftp/caldb/acis_bkgrnd_4.6.9.tar.gz \
 &&  tar xzvf acis_bkgrnd_4.6.9.tar.gz \
 	     hrc_bkgrnd_4.6.1.1.tar.gz \
 # Clean
-&&  rm -f *.tar.gz
+&&  rm -f acis_bkgrnd_4.6.9.tar.gz \
+          hrc_bkgrnd_4.6.1.1.tar.gz
 
