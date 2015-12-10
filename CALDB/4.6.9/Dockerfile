@@ -29,5 +29,5 @@ RUN wget ftp://cda.harvard.edu/pub/arcftp/caldb/caldb_4.6.9_main.tar.gz \
 &&  tar xzvf caldb_4.6.9_main.tar.gz \ 
 
 # Clean
-&&  rm -f *.tar.gz
+&&  rm -f caldb_4.6.9_main.tar.gz
 
