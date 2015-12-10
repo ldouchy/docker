@@ -8,7 +8,7 @@ MAINTAINER ldouchy
 # Prerequisite packages installation & clean
 RUN apt-get update \
  && apt-get install -y \
-	curl \
+	wget \
  && rm -rf /var/lib/apt/lists/*
 
 # caldbmgr:caldb user creation
