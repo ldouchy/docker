@@ -16,10 +16,10 @@ workdir /opt/CALDB
 
 # Download 
 RUN wget ftp://cda.harvard.edu/pub/arcftp/caldb/acis_bkgrnd_4.6.9.tar.gz \
-	 ftp://cda.harvard.edu/pub/arcftp/caldb/hrc_bkgrnd_4.6.1.1.tar.gz \
+&&  wget ftp://cda.harvard.edu/pub/arcftp/caldb/hrc_bkgrnd_4.6.1.1.tar.gz \
 # Uncompress
 &&  tar xzvf acis_bkgrnd_4.6.9.tar.gz \
-	     hrc_bkgrnd_4.6.1.1.tar.gz \
+&&  tar xzvf hrc_bkgrnd_4.6.1.1.tar.gz \
 # Clean
 &&  rm -f acis_bkgrnd_4.6.9.tar.gz \
           hrc_bkgrnd_4.6.1.1.tar.gz
