@@ -19,7 +19,7 @@ USER caldbmgr
 
 workdir /opt/CALDB
 
-COPY ./caldb_download/* /opt/CALDB/
+#COPY ./caldb_download/* /opt/CALDB/
 
 # Download 
 RUN wget ftp://cda.harvard.edu/pub/arcftp/caldb/caldb_4.6.9_main.tar.gz \
