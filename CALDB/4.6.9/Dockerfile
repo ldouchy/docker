@@ -26,7 +26,7 @@ RUN wget ftp://cda.harvard.edu/pub/arcftp/caldb/caldb_4.6.9_main.tar.gz \
          ftp://cda.harvard.edu/pub/arcftp/caldb/README_caldb4.6.9.txt \
 	 ftp://cda.harvard.edu/pub/arcftp/caldb/MANIFEST_4.6.9_main.txt && \
 # Uncompress
-    tar xz *.tar.gz && \
+    tar xzf *.tar.gz && \
 # Clean
     rm -f *.tar.gz
 
