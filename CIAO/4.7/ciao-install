@@ -28,8 +28,8 @@
 
 # these variables will be configured by the web page
 
-SEGMENTS="sherpa chips tools prism obsvis contrib CALDB_main "
-SYS=""
+SEGMENTS="sherpa chips tools prism obsvis contrib "
+SYS="Linux64"
 
 # Global variables
 # The DEF_* Variables are over-written with values found in

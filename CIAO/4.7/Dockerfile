@@ -1,7 +1,7 @@
 # Dockerfile for CIAO recommended install 
 # http://cxc.harvard.edu/ciao/
 
-FROM ubuntu:15.10
+FROM ldouchy/caldb:4.6.9
 
 MAINTAINER ldouchy
 
@@ -36,7 +36,7 @@ WORKDIR /opt
 COPY .ciaoinstall.rc ciao-install /root/
 #COPY ./ciao_download /opt/ciao_download
 
-RUN mkdir -p /opt/ciao_download && bash /root/ciao-install 
+RUN mkdir -p /opt/ciao_download && bash /root/ciao-install
 
 # smoke test
 

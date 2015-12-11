@@ -4,7 +4,7 @@ DL_DIR /opt/ciao_download
 # Install directory
 INS_DIR /opt
 # CALDB directory
-CALDB_DIR CIAO
+CALDB_DIR /opt/CALDB
 # Run Smoke tests upon completion?
 RUN_SMOKE n
 # Delete download tar files after update?
