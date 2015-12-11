@@ -15,7 +15,7 @@ Launched without option this container will run the full CIAO smoke test. Specif
 
 On linux:
 
-`$ docker run -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY ldouchy/ciao:4.7`
+`$ docker run --privileged -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY ldouchy/ciao:4.7`
 
 /!\ you need to authorize the container to access your local X server. /!\
 
