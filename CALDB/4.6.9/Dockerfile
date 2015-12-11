@@ -24,10 +24,10 @@ workdir /opt/CALDB
 # Download 
 RUN wget ftp://cda.harvard.edu/pub/arcftp/caldb/caldb_4.6.9_main.tar.gz \
 &&  tar xzvf caldb_4.6.9_main.tar.gz \
-&&  rm -f caldb_4.6.9_main.tar.gz \
+&&  rm -f caldb_4.6.9_main.tar.gz
 RUN  wget ftp://cda.harvard.edu/pub/arcftp/caldb/acis_bkgrnd_4.6.9.tar.gz \
 &&  tar xzvf acis_bkgrnd_4.6.9.tar.gz \
-&&  rm -f acis_bkgrnd_4.6.9.tar.gz \
+&&  rm -f acis_bkgrnd_4.6.9.tar.gz
 RUN  wget ftp://cda.harvard.edu/pub/arcftp/caldb/hrc_bkgrnd_4.6.1.1.tar.gz \
 &&  tar xzvf hrc_bkgrnd_4.6.1.1.tar.gz \
 &&  rm -f hrc_bkgrnd_4.6.1.1.tar.gz
