@@ -35,3 +35,5 @@ RUN wget ftp://cda.harvard.edu/pub/arcftp/caldb/hrc_bkgrnd_4.6.1.1.tar.gz \
 RUN wget ftp://cda.harvard.edu/pub/arcftp/caldb/README_caldb4.6.9.txt \
 &&  wget ftp://cda.harvard.edu/pub/arcftp/caldb/MANIFEST_4.6.9_main.txt
 
+# reset user for next layer
+USER root
