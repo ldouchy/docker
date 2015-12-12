@@ -5,6 +5,12 @@ FROM ldouchy/caldb:4.6.9
 
 MAINTAINER ldouchy
 
+# Dockerfile prerequisite variables
+ENV VERSION=4.7 \
+    ROOT_INSTALL=/opt/ciao-4.7
+
+LABEL CIAO_version="$VERSION" description="CIAO software http://cxc.harvard.edu/ciao/"
+
 # Prerequisite packages installation & clean
 RUN apt-get update \
  && apt-get install -y \
@@ -25,18 +31,20 @@ RUN apt-get update \
 	wget \
  && rm -rf /var/lib/apt/lists/*
 
-# Dockerfile prerequisite variables
-ENV VERSION=4.7 \
-    ROOT_INSTALL=/opt/ciao-4.7
-
-LABEL CIAO_version="$VERSION" description="CIAO software http://cxc.harvard.edu/ciao/"
-
 WORKDIR /opt
 
-COPY .ciaoinstall.rc ciao-install /root/
 #COPY ./ciao_download /opt/ciao_download
 
-RUN mkdir -p /opt/ciao_download && bash /root/ciao-install
+RUN mkdir -p /opt/ciao_download /opt/ciao-$VERSION \
+&&  groupadd ciao && useradd -r -m -g ciao -G caldb ciaomgr \
+&&  chown -R ciaomgr:ciao /opt/ciao_download /opt/ciao-$VERSION
+
+USER ciaomgr
+
+COPY .ciaoinstall.rc ciao-install /home/ciaomgr/
+RUN  bash /home/ciaomgr/ciao-install --logdir /home/ciaomgr/
+
+USER root
 
 # smoke test
 
