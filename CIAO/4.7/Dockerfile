@@ -7,9 +7,9 @@ MAINTAINER ldouchy
 
 # Dockerfile prerequisite variables
 ENV VERSION=4.7 \
-    ROOT_INSTALL=/opt/ciao-4.7
+    CIAO_ROOT_INSTALL=/opt/ciao-4.7
 
-LABEL CIAO_version="$VERSION" description="CIAO software http://cxc.harvard.edu/ciao/"
+LABEL CIAO_version="${VERSION}" description="CIAO software http://cxc.harvard.edu/ciao/"
 
 # Prerequisite packages installation & clean
 RUN apt-get update \
@@ -35,9 +35,9 @@ WORKDIR /opt
 
 #COPY ./ciao_download /opt/ciao_download
 
-RUN mkdir -p /opt/ciao_download $ROOT_INSTALL \
-&&  groupadd ciao && useradd -r -m -g ciao -G caldb ciaomgr \
-&&  chown -R ciaomgr:ciao /opt/ciao_download $ROOT_INSTALL
+RUN groupadd ciao && useradd -r -m -g ciao -G caldb ciaomgr \
+&&  mkdir -p /opt/ciao_download ${CIAO_ROOT_INSTALL} \
+&&  chown -R ciaomgr:ciao /opt/ciao_download ${CIAO_ROOT_INSTALL}
 
 USER ciaomgr
 
@@ -48,4 +48,4 @@ USER root
 
 # smoke test
 
-CMD bash -c 'source /opt/ciao-4.7/bin/ciao.bash && export LOGNAME=root && cd /opt/ciao-4.7/test && make -k test 2>&1 | tee ~/ciao_test.log'
+CMD bash -c 'source ${CIAO_ROOT_INSTALL}/bin/ciao.bash && export LOGNAME=root && cd ${CIAO_ROOT_INSTALL}/test && make -k test 2>&1 | tee /home/ciaomgr/ciao_test.log'
