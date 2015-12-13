@@ -35,9 +35,9 @@ WORKDIR /opt
 
 #COPY ./ciao_download /opt/ciao_download
 
-RUN mkdir -p /opt/ciao_download /opt/ciao-$VERSION \
+RUN mkdir -p /opt/ciao_download $ROOT_INSTALL \
 &&  groupadd ciao && useradd -r -m -g ciao -G caldb ciaomgr \
-&&  chown -R ciaomgr:ciao /opt/ciao_download /opt/ciao-$VERSION
+&&  chown -R ciaomgr:ciao /opt/ciao_download $ROOT_INSTALL
 
 USER ciaomgr
 
