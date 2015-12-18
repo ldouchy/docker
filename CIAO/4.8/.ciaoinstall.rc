@@ -1,0 +1,12 @@
+# This is a generated file. Do not edit.
+# Download directory
+DL_DIR /opt/ciao_download
+# Install directory
+INS_DIR /opt
+# CALDB directory
+CALDB_DIR /opt/CALDB
+# Run Smoke tests upon completion?
+RUN_SMOKE n
+# Delete download tar files after update?
+DELETE_TAR y
+
