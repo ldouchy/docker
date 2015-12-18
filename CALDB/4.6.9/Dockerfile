@@ -21,19 +21,23 @@ USER caldbmgr
 
 workdir /opt/CALDB
 
+ENV CALDB_VERSION=4.6.9 \
+    ACIS_VERSION=4.6.9 \
+    HRC_VERSION=4.6.1.1
+
 # Download, Untar, Remove
-RUN wget ftp://cda.harvard.edu/pub/arcftp/caldb/caldb_4.6.9_main.tar.gz \
-&&  tar xzvf caldb_4.6.9_main.tar.gz \
-&&  rm -f caldb_4.6.9_main.tar.gz
-RUN wget ftp://cda.harvard.edu/pub/arcftp/caldb/acis_bkgrnd_4.6.9.tar.gz \
-&&  tar xzvf acis_bkgrnd_4.6.9.tar.gz \
-&&  rm -f acis_bkgrnd_4.6.9.tar.gz
-RUN wget ftp://cda.harvard.edu/pub/arcftp/caldb/hrc_bkgrnd_4.6.1.1.tar.gz \
-&&  tar xzvf hrc_bkgrnd_4.6.1.1.tar.gz \
-&&  rm -f hrc_bkgrnd_4.6.1.1.tar.gz
+RUN wget ftp://cda.harvard.edu/pub/arcftp/caldb/caldb_${CALDB_VERSION}_main.tar.gz \
+&&  tar xzvf caldb_${CALDB_VERSION}_main.tar.gz \
+&&  rm -f caldb_${CALDB_VERSION}_main.tar.gz
+RUN wget ftp://cda.harvard.edu/pub/arcftp/caldb/acis_bkgrnd_${ACIS_VERSION}.tar.gz \
+&&  tar xzvf acis_bkgrnd_${ACIS_VERSION}.tar.gz \
+&&  rm -f acis_bkgrnd_${ACIS_VERSION}.tar.gz
+RUN wget ftp://cda.harvard.edu/pub/arcftp/caldb/hrc_bkgrnd_${HRC_VERSION}.tar.gz \
+&&  tar xzvf hrc_bkgrnd_${HRC_VERSION}.tar.gz \
+&&  rm -f hrc_bkgrnd_${HRC_VERSION}.tar.gz
 # Documentation
-RUN wget ftp://cda.harvard.edu/pub/arcftp/caldb/README_caldb4.6.9.txt \
-&&  wget ftp://cda.harvard.edu/pub/arcftp/caldb/MANIFEST_4.6.9_main.txt
+RUN wget ftp://cda.harvard.edu/pub/arcftp/caldb/README_caldb${CALDB_VERSION}.txt \
+&&  wget ftp://cda.harvard.edu/pub/arcftp/caldb/MANIFEST_${CALDB_VERSION}_main.txt
 
 # reset user for next layer
 USER root
