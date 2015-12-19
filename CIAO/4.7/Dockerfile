@@ -42,7 +42,7 @@ RUN groupadd ciao && useradd -r -m -g ciao -G caldb ciaomgr \
 USER ciaomgr
 
 COPY .ciaoinstall.rc ciao-install /home/ciaomgr/
-RUN  bash /home/ciaomgr/ciao-install --logdir /home/ciaomgr/
+RUN  bash /home/ciaomgr/ciao-install --logdir /home/ciaomgr/ --caldb /opt/CALDB
 
 USER root
 
